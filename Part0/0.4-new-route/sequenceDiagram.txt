@@ -1,0 +1,35 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note over browser Submit something in the text field!
+
+    browser-server  POST httpsstudies.cs.helsinki.fiexampleappnew_note
+    activate server
+    Note right of server Direct to the notes and add the data
+    server--browser HTTP Status 302 Found, redirected to httpsstudies.cs.helsinki.fiexampleappnotes
+    deactivate server
+
+    browser-server GET httpsstudies.cs.helsinki.fiexampleappnotes
+    activate server
+    server--browser HTML document
+    deactivate server
+
+    browser-server GET httpsstudies.cs.helsinki.fiexampleappmain.css
+    activate server
+    server--browser the css file
+    deactivate server
+
+    browser-server GET httpsstudies.cs.helsinki.fiexampleappmain.js
+    activate server
+    server--browser the JavaScript file
+    deactivate server
+
+    Note right of browser The browser starts executing the JavaScript code that fetches the JSON from the server
+
+    browser-server GET httpsstudies.cs.helsinki.fiexampleappdata.json
+    activate server
+    server--browser [{ contenttry,date2023-07-11 }, ... ]
+    deactivate server
+
+    Note right of browser The browser executes the callback function that renders the notes
