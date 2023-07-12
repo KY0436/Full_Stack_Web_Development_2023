@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note over browser: Submit something in the text field!
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/spa
+    activate server
+    server-->>browser: HTML Status Code 201, {"message":"note created"}
+    deactivate server
+
+    Note right of browser:  Instead of redirecting to the old page, it only renders the notes on the page
+    
