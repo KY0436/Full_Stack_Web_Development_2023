@@ -1,21 +1,36 @@
-GET http://localhost:3001/
+GET http://localhost:3003/
 ###
 
-GET  http://localhost:3001/api/persons/64e2947ee721b175671bfeca
+GET  http://localhost:3003/api/blogs
 ###
-###
-
-
-DELETE  http://localhost:3001/api/persons/64e2947ee721b175671bfeca
 ###
 
 
-POST  http://localhost:3001/api/persons
+DELETE  http://localhost:3001/api/blogs/64e2947ee721b175671bfeca
+###
+
+DELETE  http://localhost:3003/api/blogs/65379332c34465c6bffe82f1
+###
+
+POST  http://localhost:3003/api/blogs
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ
+{
+  "title": "Icde",
+  "author": "A1ds",
+  "url": "Unkowdn",
+  "likes": "7123"
+}
+###
+
+POST  http://localhost:3003/api/blogs
 content-type: application/json
 
 {
-    "name": "Yan Jiamin", 
-    "number": "183-7022-2345"
+  "title": "Signals and Systems",
+  "author": "Giant",
+  "url": "xxx",
+  "likes": "10000"
 }
 ###
 
@@ -36,3 +51,36 @@ content-type: application/json
     "number": "182-6123-4231"
 }
 ###
+
+
+POST  http://localhost:3003/api/users
+content-type: application/json
+
+{
+  "username": "hellas",
+  "name": "Arto Hellas",
+  "password": "asdfasdfsadfd"
+}
+### This is for the Part 4.15
+
+POST  http://localhost:3003/api/blogs
+content-type: application/json
+
+{
+  "title": "Digital Signal Processing",
+  "author": "Great",
+  "url": "xxx",
+  "likes": "100001",
+  "userId": "6536e03176f06e1a4dc6a1ee"
+}
+### This is for the Part 4.19
+
+POST  http://localhost:3003/api/users
+content-type: application/json
+
+{
+  "username": "tester",
+  "name": "Diego Jack",
+  "password": "000000"
+}
+### This is for the Part 4.23, which adds the tester firstly
