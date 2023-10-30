@@ -3,7 +3,7 @@ import blogService from "../services/blogs";
 import PropTypes from "prop-types";
 
 const Blog = ({blog, setBlogs, user}) => {
-  const [blogDeatilVisible, setBlogDeatilVisible] = useState(false);
+  const [blogDeatialVisible, setBlogDeatialVisible] = useState(false);
   const [blogState, setBlogState] = useState(blog);
   const blogStyle = {
     paddingTop: 10,
@@ -56,8 +56,8 @@ const Blog = ({blog, setBlogs, user}) => {
           <div>
             <span className="title">{blogState.title}</span>{" "}
             <span className="author">{blogState.author}</span>
-            <button onClick={() => setBlogDeatilVisible(!blogDeatilVisible)}>
-              {blogDeatilVisible ? "hide" : "view"}
+            <button onClick={() => setBlogDeatialVisible(!blogDeatialVisible)}>
+              {blogDeatialVisible ? "hide" : "view"}
             </button>
           </div>
           <div style={showWhenVisible} className="hiddenInfo">
