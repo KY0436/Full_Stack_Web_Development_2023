@@ -21,7 +21,7 @@ export const setNotification = (content, time) => {
     dispatch(createNotification(content))
     setTimeout(() => {
       dispatch(deleteNotification())
-    }, time*1000);
+    }, time*1000) // Part 6.19, which demands to use actual 5 seconds.
   }
 }
 
